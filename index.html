@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+  <title>Rentomojo</title>
+  <link rel="icon" href='./logo.jpg'/>
+</head>
+
+<body>
+  
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">
+        <img src="logo.jpg" width="33" height="35">rentomojo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+
+          <li class="dropdown">
+            <a class="nav-link dropdown-toggle" href="/" id="navbarScrollingDropdown" role="button"
+              data-bs-toggle="dropdown">
+              City
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item" href="/">Delhi</a></li>
+              <li><a class="dropdown-item" href="/">Bangalore</a></li>
+              <li><a class="dropdown-item" href="/">Mumbai </a></li>
+              <li><a class="dropdown-item" href="/">Chennai</a></li>
+            </ul>
+          </li>
+
+          <div class="search-container">
+            <table class="table-search">
+              <tr>
+                <td>
+                  <input class="search-box" type="search" placeholder="Search for products">
+                </td>
+                <td>
+                  <button class="search-btn" type="submit"> <span class="material-icons">search</span></button>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+
+          <li class="nav-item">
+            <a class="nav-link active bi bi-cart3" aria-current="page">
+              Cart</a>
+          </li>
+        </ul>
+        <div class="username">
+          <button class="btn btn-light dropdown-toggle bi bi-person-circle" type="button"
+            data-bs-toggle="dropdown" aria-expanded="true">
+            Username
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item bi bi-list-nested" href="#">My Account</a></li>
+            <li><a class="dropdown-item bi bi-suit-heart" href="#">My Wishlist</a></li>
+            <li><a class="dropdown-item bi bi-gear-fill" href="#">Settings</a></li>
+            <li><a class="dropdown-item bi bi-power" href="#">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  
+  
+  <script>
+    $(function () {
+      if ($('#sticky').length) {
+        var el = $('#sticky');
+        var stickyTop = $('sticky').offset().top;
+        var stickyHeight = $('#sticky').height();
+
+        $(window).scroll(function () {
+          var limit = $('#footer').offset().top - stickyHeight - 20;
+          var windowTop = $(window).scrollTop();
+          if (stickyTop < windowTop) {
+            el.css({
+              position: 'fixed',
+              top: 0
+            });
+          } else {
+            el.css('position', 'static');
+          }
+          if (limit < windowTop) {
+            var diff = limit - windowTop;
+            el.css({
+              top: diff
+            });
+          }
+        });
+      }
+    });
+  </script>
+
+
+
+
+
+
+  <div id="main">
+
+
+    <div id="leftsidebar"> <img src="picture.jpeg"></div>
+    <div id="rightsidebar">
+      <div id="regular" class="card card-body">
+        <h1 class="rm-product-title">
+          Ultima Appliances Combo
+        </h1>
+        <div class="sticky-green-items"><div>
+          3
+          <span>
+            Products
+          </span></div></div>
+      </div>
+      <div class="make-title"><span> How long do you want to rent this for? (Months) </span>
+        <div class="menu" position-absolutely="true" style="display: inline-block;">
+          <div class="menu__activator">
+            <div class="rmi-small"><img src="./icons8-info.svg" alt="Rmi Info"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="padd-sticky bg-white card-body card" id="sticky">
+        <div class="clearfix"></div>
+        <div class="p-rel sticky-slider-div">
+          <div class="vue-slider vue-slider-ltr range-slider" setvalue="6+" show="true" speed="0.3" piecewise="true"
+            piecewiselabel="true" bgstyle="[object Object]" piecewisestyle="[object Object]"
+            sliderstyle="[object Object]" style="padding: 10px 0px; width: auto; height: 4px; margin-left: -5px;">
+            <div class="vue-slider-rail">
+              <div class="vue-slider-process"
+                style="height: 100%; top: 0px; left: 0%; width: 50%; transition-property: width, left; transition-duration: 0.5s; background-color: rgb(255, 91, 93);">
+              </div>
+              <div class="vue-slider-marks">
+                <div class="vue-slider-mark vue-slider-mark-active" style="height: 100%; width: 4px; left: 0%;">
+                  <div class="vue-slider-mark-step vue-slider-mark-step-active"></div>
+                  <div class="vue-slider-mark-label vue-slider-mark-label-active">3+</div>
+                </div>
+                <div class="vue-slider-mark vue-slider-mark-active" style="height: 100%; width: 4px; left: 50%;">
+                  <div class="vue-slider-mark-step vue-slider-mark-step-active"></div>
+                  <div class="vue-slider-mark-label vue-slider-mark-label-active">6+</div>
+                </div>
+                <div class="vue-slider-mark" style="height: 100%; width: 4px; left: 100%;">
+                  <div class="vue-slider-mark-step"></div>
+                  <div class="vue-slider-mark-label">12+</div>
+                </div>
+              </div>
+              <div class="vue-slider-dot"
+                style="width: 20px; height: 20px; transform: translate(-50%, -50%); top: 50%; left: 50%; transition: left 0.5s ease 0s;">
+                <div class="vue-slider-dot-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="xs-res-mg1 mb-1"></div>
+        <div class="price-box flat-price-box">
+          <div class="box-col active">
+            <div class="price-box__price">
+              <div><span class="price-box__rupee-sign">
+                  ₹
+                </span><span class="price-box__amount">
+                  1085
+                </span><span class="price-box__month">
+                  / mo
+                </span><span class="rm-ft__flea-discount">
+                  ₹1118
+                </span></div>
+            </div>
+            <div class="price-box__title">
+              Monthly Rent
+              <div class="price-box__info-icon rmi-small"><img src="./icons8-info.svg"
+                  alt="Rmi Info"></div>
+            </div>
+          </div>
+          <div class="box-col active">
+            <div class="price-box__price">
+              <div><span class="price-box__rupee-sign">
+                  ₹
+                </span><span class="price-box__amount">
+                  2398
+                </span></div>
+            </div>
+            <div class="price-box__title">Refundable Deposit
+              <div class="price-box__info-icon">
+                <div class="menu" position-absolutely="true" style="display: inline-block;">
+                  <div class="menu__activator">
+                    <div class="rmi-small"><img src="./icons8-info.svg" alt="Refund Info"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rm-rent-features"><div class="feature-col bi bi-record-fill">
+          7 Days free trial
+        </div><div class="feature-col bi bi-record-fill">
+          Free relocation
+        </div><div class="feature-col bi bi-record-fill">
+          Free upgrades
+        </div><div class="feature-col features-view-all text-right" style="display: none;">
+          View All
+        </div></div>
+      </div>
+      
+      <div class="card card-body">
+        <table class="table rm-prod__sticky-table2">
+          <tbody></tbody>
+        </table>
+        <div>
+          <div class="row rm">
+
+            <div class="col-xs-9 h6">
+              <i class="bi bi-truck"></i> <small class="text-muted">Delivery by</small> 12th Jul 2021
+              <i class="bi bi-info-circle-fill" id="info-circle"></i>
+            </div>
+            <div class="col-xs-1">
+              <div class="menu" position-absolutely="true" style="display: inline-block;">
+                <div class="menu__activator">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rm-section__flex-column"><button class="btn-danger"><span>
+              Book your plan
+            </span></button></div>
+      </div>
+    </div>
+
+
+  </div>
+  <div id="footer"></div>
+  </div>
+</body>
+
+</html>
